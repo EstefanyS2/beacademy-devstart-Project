@@ -11,6 +11,22 @@
 
 <body>
     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <ul class="navbar-nav mr-auto">
+                                <a class="navbar-brand text-warning" href="/">Home</a>
+                                <li class="nav-item active text-warninng">
+                                    <a class="nav-link" href="{{ route('filmes.index')}}">Filmes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
         @yield('body')
     </div>
 </body>

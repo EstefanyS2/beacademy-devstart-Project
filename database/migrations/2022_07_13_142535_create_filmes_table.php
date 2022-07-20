@@ -15,12 +15,16 @@ class CreateFilmesTable extends Migration
     {
         Schema::create('filmes', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->float('Duração', 8, 4);
-            $table->string('Gênero');
-            $table->float('Classificação');
-            $table->string('Linguagem');
-            $table->string('Sinopse');
+            $table->string('filme');
+            $table->string('duracao');
+            $table->string('genero');
+            $table->string('classificacao');
+            $table->string('linguagem');
+            $table->string('sinopse');
+            $table->date('dtbirth')->nullable();
+            $table->string('plataformas');
+            $table->string('direcao');
+            $table->string('premio');
             $table->timestamps();
         });
     }

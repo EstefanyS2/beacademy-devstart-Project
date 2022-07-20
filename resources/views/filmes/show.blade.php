@@ -1,13 +1,11 @@
 @extends('template.filmes')
-@section('title', 'Listagem de Filmes')
+@section('title', '$title')
 @section('body')
 
-<h1>Listagem de Filmes</h1>
-      <a href="{{ route('filmes.create') }}" class="btn btn-success btn-sm mb-3">Adcionar Filmes</a>
-    <table class="table">
-      <thead class="text-center">
+<h1>Filmes {{ $filme->name }}</h1>
+    <table class="text-center">
+      <thead>
         <tr>
-            <th scope="col">FOTO</th>
             <th scope="col">ID</th>
             <th scope="col">NOME DO FILME</th>
             <th scope="col">DURAÇÃO</th>
@@ -23,11 +21,9 @@
         </tr>
       </thead>
     <tbody class="text-center">
-        @foreach($filmes as $filme)
         <tr>
-            <th><img src="{{ asset('storage/' . $filme->image) }}" width="%0px" height="50px" class="rounded-circle"></th>
             <th scope="row">{{ $filme->id }}</th>
-            <td>{{ $filme->nome }}</td>
+            <td>{{ $filme->name }}</td>
             <td>{{ $filme->duracao }}</td>
             <td>{{ $filme->genero }}</td>
             <td>{{ $filme->classificacao}}</td>
@@ -38,10 +34,16 @@
             <td>{{ $filme->premio}}</td>
             <td>{{ date('d/m/y - H:i', strtotime($filme->created_at)) }}</td>
             <td>
-              <a href="{{ route('filmes.show', $filme->id ) }}" class="btn btn-primary">Visualizar</a>
+              <a href="{{ route('filmes.show', $filme->id ) }}" class="btn btn-primary">Editar</a>
+            </td>
+            <td>
+                <form action="{{ route('filmes.destroy', $filme->id) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                <button type="submit" class="btn btn-sm btn-outline-primary">Deletar</button>
+                </form>
             </td>
         </tr>
-        @endforeach
     </tbody>
 </table>
 @endsection
