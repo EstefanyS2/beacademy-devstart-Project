@@ -14,8 +14,8 @@
    <form action="{{ route('filmes.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="filme" class="form-label">Nome do Filme</label>
-            <input type="text"v class="form-control" id="filme" name="filme">
+            <label for="name" class="form-label">Nome do Filme</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name">
         </div>
         <div class="mb-3">
             <label for="duracao" class="form-label">Duração</label>
@@ -35,11 +35,11 @@
         </div>
         <div class="mb-3">
             <label for="sinopse" class="form-label">Sinopse</label>
-            <textarea type="text" class="form-control" id="sinopse" name="sinopse" rows="3"></textarea>
+            <textarea type="text" class="form-control" id="sinopse" name="sinopse" rows="5"></textarea>
         </div>
         <div class="mb-3">
             <label for="dtbirth" class="form-label">Data de Lançamento</label>
-            <input type="date" class="form-control" id="dtbirth" name="dtbirth">
+            <input type="date" class="form-control" id="dtbirth" name="Data_de_Lancamento">
         </div>
         <div class="mb-3">
             <label for="sinopse" class="form-label">Plataformas</label>

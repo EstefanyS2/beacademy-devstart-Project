@@ -13,7 +13,7 @@ class filme extends Model
 
     protected $fillable = [
         'image',
-        'filme',
+        'name',
         'duracao',
         'genero',
         'classificacao',

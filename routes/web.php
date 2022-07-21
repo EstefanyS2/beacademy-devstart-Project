@@ -8,7 +8,7 @@ use App\Http\Controllers\{
 };
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::delete('/filmes/{id}', [FilmeController::class, 'destroy'])->name('filmes.destroy');

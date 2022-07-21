@@ -7,8 +7,8 @@
     <table class="table">
       <thead class="text-center">
         <tr>
-            <th scope="col">FOTO</th>
             <th scope="col">ID</th>
+            <th scope="col">FOTO</th>
             <th scope="col">NOME DO FILME</th>
             <th scope="col">DURAÇÃO</th>
             <th scope="col">GÊNERO</th>
@@ -25,18 +25,20 @@
     <tbody class="text-center">
         @foreach($filmes as $filme)
         <tr>
-            <th><img src="{{ asset('storage/' . $filme->image) }}" width="%0px" height="50px" class="rounded-circle"></th>
             <th scope="row">{{ $filme->id }}</th>
-            <td>{{ $filme->nome }}</td>
+            <figure class="figure">
+            <th><img class="figure-img img-fluid rounded" src="{{ asset('storage/' . $filme->image) }}" alt="..."></th>
+            <figcaption class="figure-caption"></figcaption>
+            <td>{{ $filme->name }}</td>
             <td>{{ $filme->duracao }}</td>
             <td>{{ $filme->genero }}</td>
             <td>{{ $filme->classificacao}}</td>
             <td>{{ $filme->linguagem}}</td>
             <td>{{ $filme->sinopse}}</td>
+            <td>{{ date('d/m/y - H:i', strtotime($filme->created_at)) }}</td>
             <td>{{ $filme->plataformas}}</td>
             <td>{{ $filme->direcao}}</td>
             <td>{{ $filme->premio}}</td>
-            <td>{{ date('d/m/y - H:i', strtotime($filme->created_at)) }}</td>
             <td>
               <a href="{{ route('filmes.show', $filme->id ) }}" class="btn btn-primary">Visualizar</a>
             </td>

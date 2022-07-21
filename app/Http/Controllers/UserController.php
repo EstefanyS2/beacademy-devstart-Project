@@ -23,7 +23,7 @@ class UserController extends Controller
     public function show($id)
     {
         if(!$users = User::find($id))
-           return redirect()->route('users/index');
+           return redirect()->route('users.index');
 
            $title = 'Usuário' .$users->name;
 

@@ -26,7 +26,7 @@ class FilmeController extends Controller
         if(!$filmes = filme::find($id))
           return redirect()->route('filmes.index');
 
-          //$title = 'Filme' .$filme->name;
+          $title = 'Filme' .$filmes->name;
 
           return view('filmes.show', compact('filmes', 'title'));
     }
@@ -36,15 +36,15 @@ class FilmeController extends Controller
         return view('filmes.create');
     }
 
-    public function store(FilmeRequest $request)
+    public function store(FilmeRequest $Request)
     {
-        $data = $request->all();
-        if($request->image){
-            $file = $request['image'];
+        $data = $Request->all();
+        if($Request->image){
+            $file = $Request['image'];
             $path = $file->store('profile', 'public');
             $data['image'] = $path;
         }
-        
+        //$data['filme'] = 'string';
         /*$data['lancamento'] = '2019-01-01';
         $data['plataformas'] = "Netflix";
         $data['diretor(a)'] = "Estefany";

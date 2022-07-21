@@ -2,7 +2,7 @@
 @section('title', '$title')
 @section('body')
 
-<h1>Filmes {{ $filme->name }}</h1>
+<h1>Editar Filmes</h1>
     <table class="text-center">
       <thead>
         <tr>
@@ -17,27 +17,27 @@
             <th scope="col">PLATAFORMAS</th>
             <th scope="col">DIREÇÃO</th>
             <th scope="col">PRÊMIO</th>
-            <th scope="col">AÇOÊS</th>
+            <th scope="col" colspan="2">AÇOÊS</th>
         </tr>
       </thead>
     <tbody class="text-center">
         <tr>
-            <th scope="row">{{ $filme->id }}</th>
-            <td>{{ $filme->name }}</td>
-            <td>{{ $filme->duracao }}</td>
-            <td>{{ $filme->genero }}</td>
-            <td>{{ $filme->classificacao}}</td>
-            <td>{{ $filme->linguagem}}</td>
-            <td>{{ $filme->sinopse}}</td>
-            <td>{{ $filme->plataformas}}</td>
-            <td>{{ $filme->direcao}}</td>
-            <td>{{ $filme->premio}}</td>
-            <td>{{ date('d/m/y - H:i', strtotime($filme->created_at)) }}</td>
+            <th scope="row">{{ $filmes->id }}</th>
+            <td>{{ $filmes->nome_do_filme }}</td>
+            <td>{{ $filmes->duracao }}</td>
+            <td>{{ $filmes->genero }}</td>
+            <td>{{ $filmes->classificacao}}</td>
+            <td>{{ $filmes->linguagem}}</td>
+            <td>{{ $filmes->sinopse}}</td>
+            <td>{{ date('d/m/y', strtotime($filmes->created_at)) }}</td>
+            <td>{{ $filmes->plataformas}}</td>
+            <td>{{ $filmes->direcao}}</td>
+            <td>{{ $filmes->premio}}</td>
             <td>
-              <a href="{{ route('filmes.show', $filme->id ) }}" class="btn btn-primary">Editar</a>
+              <a href="{{ route('filmes.edit', $filmes->id ) }}" class="btn btn-sm btn-outline-primary">Editar</a>
             </td>
             <td>
-                <form action="{{ route('filmes.destroy', $filme->id) }}" method="POST">
+                <form action="{{ route('filmes.destroy', $filmes->id) }}" method="POST">
                     @method('DELETE')
                     @csrf
                 <button type="submit" class="btn btn-sm btn-outline-primary">Deletar</button>

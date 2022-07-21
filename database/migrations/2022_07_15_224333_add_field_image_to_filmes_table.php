@@ -14,7 +14,7 @@ class AddFieldImageToFilmesTable extends Migration
     public function up()
     {
         Schema::table('filmes', function (Blueprint $table) {
-            $table->string('image')->nullable()->after('filme');
+            $table->string('image')->nullable()->after('name');
         });
     }
 
