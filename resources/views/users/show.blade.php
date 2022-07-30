@@ -20,6 +20,7 @@
             <td>{{ $users->name }}</td>
             <td>{{ $users->email }}</td>
             <td>
+            @if (Auth::user()->is_admin == 1)
                 <a href="{{ route('users.edit', $users->id) }}" class="btn btn-outline-primary">Editar</a>
             </td>
             <td>
@@ -29,6 +30,7 @@
                   <button type="submit" class="btn btn-outline-danger">Deletar</button>  
                 </form>
             </td>
+            @endif
         </tr>
         @endforeach
     </tbody>

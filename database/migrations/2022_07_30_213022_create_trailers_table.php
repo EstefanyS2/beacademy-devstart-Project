@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('trailers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
+            $table->foreignId('filme_id')
+                ->constrained('filme')
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
+            $table->string('link');
             $table->timestamps();
         });
     }

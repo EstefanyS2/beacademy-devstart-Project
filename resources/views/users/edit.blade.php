@@ -29,12 +29,6 @@
         <label for="password" class="form-label">Confirme sua senha</label>
         <input type="password" class="form-control" id="password" name="password">
     </div>
-    <div class="form-check mb-5">
-          <input class="form-check-input" type="checkbox" id="admin" name="admin" value="1">
-          <label class="form-check-label" for="admin">
-            Administrador
-          </label>
-        </div>
     <button type="submit" class="btn btn-outline-primary">Atualizar</button>
 </form>
 @endsection
