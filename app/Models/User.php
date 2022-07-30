@@ -22,6 +22,8 @@ class User extends Authenticatable
         'email',
         'is_admin',
         'image',
+        'dtbirth',
+        'type',
         'password',
     ];
 
@@ -43,4 +45,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getUsers(string $search = null)
+    {
+        $users = $this->where(function ($query) use ($search) {
+            if($search){
+                $query->where('email', $search);
+                $query->orwhere('name', 'LIKE', "%{$search}%");
+            }
+        })
+            ->paginate(5);
+
+        return $users;
+    }
 }

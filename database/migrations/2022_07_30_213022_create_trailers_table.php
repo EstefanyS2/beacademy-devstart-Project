@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('trailer', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('filme_id')
-            ->constrained('users')
-            ->onDelete('CASCADE')
-            ->onUpdate('CASCADE');
-        $table->string('link');
-        $table->timestamps();
+        Schema::create('trailers', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trailer');
+        Schema::dropIfExists('trailers');
     }
 };

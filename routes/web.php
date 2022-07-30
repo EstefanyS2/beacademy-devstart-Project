@@ -4,13 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     UserController,
     FilmeController,
-    HomeController
+    ProductController,
+    
 
 };
 
 require __DIR__.'/auth.php';
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::middleware(['auth','admin'])->group(function (){
     Route::get('/admin',[UserController::class, 'admin'])->name('admin');
@@ -36,3 +39,11 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 
 });
+
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/product', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');

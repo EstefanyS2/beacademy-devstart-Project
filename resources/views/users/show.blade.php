@@ -4,12 +4,13 @@
 
 
 <table class="table">
-    <thead class="table-center table-primary">
+    <thead class="table-center">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>  
-            <th scope="col" colspan="2">Ações</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Deletar</th>
         </tr>
     </thead>
     <tbody class="text-dark">
@@ -19,18 +20,17 @@
             <td>{{ $users->name }}</td>
             <td>{{ $users->email }}</td>
             <td>
-                <a href="{{ route('users.edit', $users->id) }}" class="btn btn-primary text-white">Editar</a>
+                <a href="{{ route('users.edit', $users->id) }}" class="btn btn-outline-primary">Editar</a>
             </td>
             <td>
                 <form action="{{ route('users.destroy', $users->id) }}" method="POST">
                     @method('DELETE')
                     @csrf
-                  <button type="submit" class="btn btn-sm btnoutline-primary">Deletar</button>  
+                  <button type="submit" class="btn btn-outline-danger">Deletar</button>  
                 </form>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-
 @endsection
