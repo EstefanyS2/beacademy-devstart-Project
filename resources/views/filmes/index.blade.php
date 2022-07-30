@@ -2,20 +2,23 @@
 @section('title', 'Listagem de Filmes')
 @section('body')
 
-<h1>Listagem de Filmes</h1>
-      <a href="{{ route('filmes.create') }}" class="btn btn-success btn-sm mb-3">Adcionar Filmes</a>
-    <table class="table">
-      <thead class="text-center">
+
+@if(Auth::user()->is_admin == 1)
+<a href="{{ route('filmes.create') }}" class="btn btn-sm btn-outline-primary mb-3">Novos Filme</a>
+@endif
+</div>
+    <table class="table table-hover">
+      <thead class="text-center table-primary">
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">#</th>
             <th scope="col">FOTO</th>
-            <th scope="col">NOME DO FILME</th>
+            <th scope="col">FILME</th>
             <th scope="col">DURAÇÃO</th>
             <th scope="col">GÊNERO</th>
             <th scope="col">CLASSIFICAÇÃO</th>
             <th scope="col">LINGUAGEM</th>
             <th scope="col">SINOPSE</th>
-            <th scope="col">DATA DE LANÇAMENTO</th>
+            <th scope="col">LANÇAMENTO</th>
             <th scope="col">PLATAFORMAS</th>
             <th scope="col">DIREÇÃO</th>
             <th scope="col">PRÊMIO</th>
@@ -27,7 +30,7 @@
         <tr>
             <th scope="row">{{ $filme->id }}</th>
             <figure class="figure">
-            <th><img class="figure-img img-fluid rounded" src="{{ asset('storage/' . $filme->image) }}" alt="..."></th>
+            <th><img class="figure-img img-fluid rounded" src="{{ asset('storage/' . $filme->image) }}" width="300%" height="200" alt="..."></th>
             <figcaption class="figure-caption"></figcaption>
             <td>{{ $filme->name }}</td>
             <td>{{ $filme->duracao }}</td>

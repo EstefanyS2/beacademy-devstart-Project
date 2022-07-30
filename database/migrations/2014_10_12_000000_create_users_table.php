@@ -21,10 +21,6 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->string('phone')->nullable();
-            $table->string('address')->nullable();
-            $table->date('dtbirth')->nullable();
-            $table->string('cpf')->nullable();
             $table->boolean('type')->nullable();
         });
     }

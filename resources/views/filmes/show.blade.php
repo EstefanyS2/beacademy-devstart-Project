@@ -3,17 +3,17 @@
 @section('body')
 
 <h1>Editar Filmes</h1>
-    <table class="text-center">
-      <thead>
+    <table class="table table-hover">
+      <thead class="text center">
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">NOME DO FILME</th>
+            <th scope="col">NOME</th>
             <th scope="col">DURAÇÃO</th>
             <th scope="col">GÊNERO</th>
             <th scope="col">CLASSIFICAÇÃO</th>
             <th scope="col">LINGUAGEM</th>
             <th scope="col">SINOPSE</th>
-            <th scope="col">DATA DE LANÇAMENTO</th>
+            <th scope="col">LANÇAMENTO</th>
             <th scope="col">PLATAFORMAS</th>
             <th scope="col">DIREÇÃO</th>
             <th scope="col">PRÊMIO</th>
@@ -23,7 +23,7 @@
     <tbody class="text-center">
         <tr>
             <th scope="row">{{ $filmes->id }}</th>
-            <td>{{ $filmes->nome_do_filme }}</td>
+            <td>{{ $filmes->name }}</td>
             <td>{{ $filmes->duracao }}</td>
             <td>{{ $filmes->genero }}</td>
             <td>{{ $filmes->classificacao}}</td>
