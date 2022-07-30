@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFieldImageToFilmesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddFieldImageToFilmesTable extends Migration
      */
     public function up()
     {
-        Schema::table('filmes', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->string('image')->nullable()->after('name');
-        });
+        }); 
     }
 
     /**
@@ -25,7 +25,7 @@ class AddFieldImageToFilmesTable extends Migration
      */
     public function down()
     {
-        Schema::table('filmes', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('image');
         });
     }

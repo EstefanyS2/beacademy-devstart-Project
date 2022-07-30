@@ -1,20 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('template.users')
+@section('title', 'home')
+@section('body')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-<div class="container">
-        <nav class="navbar navbar-inverse">
-            
-</nav>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 p-3">
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ asset('storage/profile/Através da Minha Janela.jpg') }}" class="card-img-top" alt="..." width="18" height="">
+      <div class="card-body">
+        <h5 class="card-title text-center">Através da Minha Janela</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ asset('storage/profile/Amizade Colorida.webp') }}" class="card-img-top" alt="..." width="18rem">
+      <div class="card-body">
+        <h5 class="card-title text-center">Amizade Colorida</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ asset('storage/profile/A mentira.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">A mentira</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ asset('storage/profile/A Garota do Trem.jpg') }}"class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">A Torre Negra</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ asset('storage/profile/Daughter of God.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Daughter of God</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col h-100">
+    <div class="card">
+      <img src="{{ asset('storage/profile/O Último Caçador de Bruxas.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">O Último Caçador de Bruxas</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col h-100">
+    <div class="card">
+      <img src="{{ asset('storage/profile/O Dote Perfeito.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">O Dote Perfeito</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col h-100">
+    <div class="card">
+      <img src="{{ asset('storage/profile/searching.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Searchimg</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col h-100">
+    <div class="card">
+      <img src="{{ asset('storage/profile/Um Pequeno Favor.webp') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Um Pequeno Favor</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
 </div>
-    </header>
-</body>
-</html>
+@endsection

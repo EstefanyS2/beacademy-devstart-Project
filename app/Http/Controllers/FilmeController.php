@@ -6,7 +6,6 @@ use App\Http\Requests\FilmeRequest;
 use Illuminate\Http\Request;
 use App\Models\filme;
 
-
 class FilmeController extends Controller
 {
     public function __construct(Filme $filmes)
@@ -31,7 +30,7 @@ class FilmeController extends Controller
           return view('filmes.show', compact('filmes', 'title'));
     }
 
-    public function create()
+public function create()
     {
         return view('filmes.create');
     }
@@ -53,6 +52,7 @@ class FilmeController extends Controller
 
         return redirect()->route('filmes.index');
     }
+
     public function edit($id)
     {
         if(!$filmes = $this->model->find($id))

@@ -1,4 +1,4 @@
-@extends('template.filmes')
+@extends('template.users')
 @section('title', '$title')
 @section('body')
 
