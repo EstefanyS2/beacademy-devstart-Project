@@ -17,14 +17,14 @@
             <th scope="col">Ações</th>
         </tr>
     </thead>
-    <tbody class="text-center">
+    <tbody class="text-dark">
         @foreach($users as $user)
         <tr>
         <th scope="row">{{ $user->id }}</th>
         @if($user->image)
         <th><img src=" {{ asset('storage/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" /></th>
         @else
-        <th><img src=" {{ asset('storage/profile/Avatar.jpg.') }}" width="50px" height="50px" class="rounded-circle" /></th>
+        <th><img src=" {{ asset('storage/profile/Avatar.jpg') }}" width="50px" height="50px" class="rounded-circle" /></th>
         @endif
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>

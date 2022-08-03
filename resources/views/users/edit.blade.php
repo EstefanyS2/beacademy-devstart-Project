@@ -29,6 +29,6 @@
         <label for="password" class="form-label">Confirme sua senha</label>
         <input type="password" class="form-control" id="password" name="password">
     </div>
-    <button type="submit" class="btn btn-outline-primary">Atualizar</button>
+    <button type="submit" class="btn btn-outline-dark">Atualizar</button>
 </form>
 @endsection

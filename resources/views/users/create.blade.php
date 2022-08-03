@@ -43,6 +43,6 @@
         <label for="image" class="form-label">Selecione uma imagem</label>
         <input type="file" class="form-control form-control-sm" id="image" name="image" />
     </div>
-    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+    <button type="submit" class="btn btn-outline-dark">Enviar</button>
 </form>
 @endsection
