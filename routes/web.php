@@ -16,7 +16,7 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::get('/admin',[UserController::class, 'admin'])->name('admin');
 });
 
-Route::get('/filmes', [FilmeController::class, 'index'])->name('filmes.index');
+Route::get('/filmes', [\App\Http\Controllers\FilmeController::class, 'index'])->name('filmes.index');
 
 Route::middleware(['auth'])->group(function () {
 
@@ -26,8 +26,6 @@ Route::get('/filmes/{id}/edit', [FilmeController::class, 'edit'])->name('filmes.
 Route::get('/filmes/create', [FilmeController::class, 'create'])->name('filmes.create');
 Route::post('/filmes', [FilmeController::class, 'store'])->name('filmes.store');
 Route::get('/filmes/{id}', [FilmeController::class, 'show'])->name('filmes.show');
-
-
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');

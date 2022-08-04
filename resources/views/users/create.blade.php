@@ -24,14 +24,6 @@
         <input type="email" class="form-control" id="inputEmail4" name="email">
     </div>
     <div class="mb-3">
-            <label for="type" class="form-label">Tipo</label>
-            <select class="form-select" aria-label="Default select example" id="type" name="type">
-                <option selected>Escolha o tipo do usuário</option>
-                <option value="1">Admin</option>
-                <option value="2">Comum</option>
-            </select>
-        </div>
-    <div class="mb-3">
         <label for="password" class="form-label">Senha</label>
         <input type="password" class="form-control" id="password" name="password">
     </div>

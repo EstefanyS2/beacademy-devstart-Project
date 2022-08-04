@@ -51,7 +51,7 @@ class UserController extends Controller
 
         $this->model->create($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('create', 'Usuário cadastrado com sucesso!');
     }
 
     public function edit($id)
@@ -72,7 +72,7 @@ class UserController extends Controller
            $data['password'] = bcrypt($Request->password);
            $users->update($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('edit', 'Usuário atualizado com sucesso!');
     }
 
     public function destroy($id)
@@ -82,7 +82,7 @@ class UserController extends Controller
   
         $users->delete();
   
-      return redirect()->route('users.index');
+      return redirect()->route('users.index')->with('destroy', 'Usuário deletado com sucesso!');
     }
 
     public function admin()

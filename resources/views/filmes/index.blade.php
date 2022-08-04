@@ -3,9 +3,27 @@
 @section('body')
 
 <h1>Listagem de Filmes</h1>
-    @if(Auth::user()->is_admin == 1)
-      <a href="{{ route('filmes.create') }}" class="btn btn-success btn-sm mb-3">Adcionar Filmes</a>
-    @endif
+@if(session()->has('create'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Atenção!</strong> {{ session()->get('create') }}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if(session()->has('edit'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Atenção!</strong> {{ session()->get('edit') }}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if(session()->has('destroy'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Atenção!</strong> {{ session()->get('destroy') }}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+  @if(Auth::user()->is_admin == 1)
+      <a href="{{ route('filmes.create') }}" class="btn btn-outline-dark">Adcionar Filmes</a> 
+      @endif
     <table class="table">
       <thead class="text-center">
         <tr>
@@ -42,7 +60,7 @@
             <td>{{ $filme->direcao}}</td>
             <td>{{ $filme->premio}}</td>
             <td>
-              <a href="{{ route('filmes.show', $filme->id ) }}" class="btn btn-primary">Visualizar</a>
+              <a href="{{ route('filmes.show', $filme->id ) }}" class="btn btn-outline-dark">Visualizar</a>
             </td>
         </tr>
         @endforeach

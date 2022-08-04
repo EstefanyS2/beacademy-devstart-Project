@@ -27,7 +27,7 @@
                                     <a class="nav-link text-white" href="/users">Usuarios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="/filmes">Filmes</a>
+                                    <a class="nav-link text-white" href="{{ route('filmes.index') }}">Filmes</a>
                                 </li>
                             </ul>
                         </div>

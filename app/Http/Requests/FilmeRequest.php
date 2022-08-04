@@ -13,7 +13,7 @@ class FilmeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,10 +23,10 @@ class FilmeRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'name' => 'required|string|max:255',
-            'duracao'  => 'string|max:255',
             'genero' => 'string|max:255',
             'classificacao' => 'string|max:255',
             'dtbirth' => 'nullable',

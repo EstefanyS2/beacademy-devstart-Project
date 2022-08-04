@@ -3,11 +3,29 @@
 @section('body')
 
 <h1>Listagem de Usuários</h1>
+@if(session()->has('create'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Atenção!</strong> {{ session()->get('create') }}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if(session()->has('edit'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Atenção!</strong> {{ session()->get('edit') }}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if(session()->has('destroy'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Atenção!</strong> {{ session()->get('destroy') }}.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
       @if(Auth::user()->is_admin == 1)
     <a href="{{ route('users.create') }}" class="btn btn-outline-dark">Novo Usuário</a>
     @endif
-<table class="table">
-    <thead class="table-center">
+<table  class="table">
+    <thead class="table text-center">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Foto</th>
@@ -17,7 +35,7 @@
             <th scope="col">Ações</th>
         </tr>
     </thead>
-    <tbody class="text-dark">
+    <tbody class="text-center">
         @foreach($users as $user)
         <tr>
         <th scope="row">{{ $user->id }}</th>

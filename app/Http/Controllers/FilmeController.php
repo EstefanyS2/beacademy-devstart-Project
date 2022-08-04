@@ -43,14 +43,14 @@ public function create()
             $path = $file->store('profile', 'public');
             $data['image'] = $path;
         }
-        //$data['filme'] = 'string';
+        //$data['duracao']  = 'nullable';
         /*$data['lancamento'] = '2019-01-01';
         $data['plataformas'] = "Netflix";
         $data['diretor(a)'] = "Estefany";
         $data['premio'] = "1";*/
         $this->model->create($data);
 
-        return redirect()->route('filmes.index');
+        return redirect()->route('filmes.index')->with('create', 'Filme cadastrado com sucesso!');
     }
 
     public function edit($id)
@@ -71,7 +71,7 @@ public function create()
         $data['password'] = bcrypt($Request->password);
             $filmes->update($data);
 
-        return redirect()->route('filmes.index');
+        return redirect()->route('filmes.index')->with('update', 'Filme deletado com sucesso!');
     }
 
     public function destroy($id)
@@ -80,6 +80,6 @@ public function create()
             return redirect()->route('filmes.index');
 
             $filmes->delete();
-        return redirect()->route('filmes.index');
+        return redirect()->route('filmes.index')->with('destroy', 'Filme deletado com sucesso!');
     }
 }
