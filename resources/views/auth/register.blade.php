@@ -1,4 +1,4 @@
-@extends('template.filmes')
+@extends('template.users')
 @section('title', 'Login')
 @section('body')
     <h1>Registrar-Se</h1>
