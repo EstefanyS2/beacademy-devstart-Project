@@ -3,7 +3,9 @@
 @section('body')
 
 <h1>Listagem de Filmes</h1>
+    @if(Auth::user()->is_admin == 1)
       <a href="{{ route('filmes.create') }}" class="btn btn-success btn-sm mb-3">Adcionar Filmes</a>
+    @endif
     <table class="table">
       <thead class="text-center">
         <tr>

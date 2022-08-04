@@ -22,9 +22,9 @@
         <tr>
         <th scope="row">{{ $user->id }}</th>
         @if($user->image)
-        <th><img src=" {{ asset('storage/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" /></th>
+        <th><img src=" {{ asset('fotos/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" /></th>
         @else
-        <th><img src=" {{ asset('storage/profile/Avatar.jpg') }}" width="50px" height="50px" class="rounded-circle" /></th>
+        <th><img src=" {{ asset('fotos/Avatar.jpg') }}" width="50px" height="50px" class="rounded-circle" /></th>
         @endif
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
